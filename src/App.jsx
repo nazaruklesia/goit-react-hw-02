@@ -6,7 +6,7 @@ import Notification from "./components/notification/Notification";
 
 const App = () => {
   const [feedbacks, setFeedbacks] = useState(() => {
-    const savedFeedbacks = localStorage.getItem("feedbacs");
+    const savedFeedbacks = localStorage.getItem("feedbacks");
     return savedFeedbacks ? JSON.parse(savedFeedbacks) : { good: 0, neutral: 0, bad: 0 };
   });
 
