@@ -24,14 +24,14 @@ const App = () => {
     setFeedbacks({ good: 0, neutral: 0, bad: 0 });
   };
 
-  // const positiveFeedback = (good) => Math.round((good / totalFeedback) * 100));
+  const positiveFeedback = totalFeedback > 0 ? Math.round((feedbacks.good / totalFeedback) * 100) : 0;
 
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} resetFeedbaks={resetFeedbaks} />
+      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} isReset={resetFeedbaks} />
 
-      {totalFeedback === 0 ? <Notification /> : <Feedback feedbacks={feedbacks} totalFeedback={totalFeedback} />}
+      {totalFeedback === 0 ? <Notification /> : <Feedback feedbacks={feedbacks} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} />}
     </>
   );
 };
